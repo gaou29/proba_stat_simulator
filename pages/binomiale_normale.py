@@ -67,10 +67,6 @@ with col3:
     
 # Graph
 
-# ============================================================
-# GRAPHIQUE : BINOMIALE + NORMALE
-# ============================================================
-
 # Axe continu pour la loi normale
 x_normal = np.linspace(
     max(0, moyenne - 4 * ecart_type),
@@ -87,10 +83,6 @@ densite_normale = norm.pdf(
 
 fig, ax = plt.subplots(figsize=(12, 6))
 
-# ------------------------------------------------------------
-# Loi binomiale
-# ------------------------------------------------------------
-
 ax.bar(
     x,
     probabilites,
@@ -99,20 +91,12 @@ ax.bar(
     label=f"Binomiale B({n}, {p})"
 )
 
-# ------------------------------------------------------------
-# Loi normale
-# ------------------------------------------------------------
-
 ax.plot(
     x_normal,
     densite_normale,
     linewidth=2,
     label=f"Normale N({moyenne:.2f}, {variance:.2f})"
 )
-
-# ------------------------------------------------------------
-# Ligne de la moyenne
-# ------------------------------------------------------------
 
 ax.axvline(
     moyenne,
@@ -121,9 +105,6 @@ ax.axvline(
     label=f"μ = {moyenne:.2f}"
 )
 
-# ------------------------------------------------------------
-# Configuration
-# ------------------------------------------------------------
 
 ax.set_title(
     "Convergence de la loi binomiale vers la loi normale"
